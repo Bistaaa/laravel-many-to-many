@@ -4,6 +4,9 @@
 
     <div class="container text-center pt-5">
         <h1>{{ $project -> name }}</h1>
+        @if ($project -> picture)
+            <img src="{{ asset('storage/' . $project -> picture) }}" width="250px">
+        @endif
         <p>
             {{ $project -> description }}
         </p>

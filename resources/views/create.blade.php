@@ -8,6 +8,7 @@
         <form
             method="POST"
             action="{{ route('project.store') }}"
+            enctype="multipart/form-data"
         >
 
             @csrf

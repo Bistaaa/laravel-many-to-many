@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Project;
 use App\Models\Type;
@@ -30,6 +31,9 @@ class LoggedController extends Controller
 
         $data = $request -> all();
         
+        $img_path = Storage :: put('uploads', $data['picture']);
+        $data['picture'] = $img_path;
+
         $project = Project :: create($data);
         $project -> technologies() -> attach($data['technologies']);
 
