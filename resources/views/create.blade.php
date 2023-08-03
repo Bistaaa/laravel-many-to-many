@@ -42,6 +42,15 @@
                     </option>
                 @endforeach
             </select>
+            <br>
+            @foreach ($technologies as $technology)
+                <div class="form-check mx-auto" style="max-width: 300px">
+                    <input class="form-check-input" type="checkbox" value="{{ $technology -> id }}" name="technologies[]" id="technology-{{ $technology -> id }}">
+                    <label class="form-check-label" for="technology-{{ $technology -> id }}">
+                        {{ $technology -> name }}
+                    </label>
+                </div>
+            @endforeach
 
             <input class="my-3" type="submit" value="CREATE">
         </form>
