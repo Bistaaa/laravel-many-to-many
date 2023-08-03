@@ -23,6 +23,22 @@
                 Difficulty: {{ $project -> difficulty }}
             </span>
         </div>
+        <div class="row my-3">
+            <span class="col bg-dark text-light rounded mx-3">
+                Technologies:
+                @if (count($project -> technologies) > 0)
+                    @foreach ($project -> technologies as $technology)
+                        @if($loop->last)
+                            {{ $technology -> name }}
+                        @else
+                            {{ $technology -> name }},
+                        @endif
+                    @endforeach
+                @else
+                    NO TECHNOLOGY
+                @endif
+            </span>
+        </div>
     </div>
 
 @endsection
